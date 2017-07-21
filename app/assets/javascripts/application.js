@@ -31,5 +31,21 @@ $(document).ready(function(){
 		$('.more_detail_section').css("display", "none");
 		$('.less_detail_link').css("display", "none");
 	});
+	// side_nav
+	$('.side_nav').click(function(){
+		$('.overlay').css("display","block");
+		$('.sidenav_content').css("display","block");
+		$('.sidenav_content').css("right","0%");
+	});
+	$('.side_nav_close').click(function(){
+		$('.overlay').css("display","none");
+		$('.sidenav_content').css("display","none");
+		$('.sidenav_content').css("right","-25%");
+	});
+	$('.overlay').click(function(){
+		$('.overlay').css("display","none");
+		$('.sidenav_content').css("display","none");
+		$('.sidenav_content').css("right","-25%");
+	});
 });
 
