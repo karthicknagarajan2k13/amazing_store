@@ -13,3 +13,145 @@
  *= require_tree .
  *= require_self
  */
+.header-logo{
+	color: #fff;
+	font-weight: bold;
+}
+.header-logo:hover{
+	text-decoration: none;
+	color: #fff;
+}
+.nav > li > a{
+	color: #000;
+}
+.nav > li > a:hover{
+	background-color: #ffd11a;
+}
+.nav > li > a:active{
+	background-color: #ffd11a;
+}
+.textcenter{
+	font-size: large;
+    margin-top: 12px;
+}
+.textcenter{
+	text-align: center;
+}
+.navbar-as{
+	background-color: #ffd11a;
+	color: #000;
+}
+.ml-10{
+	margin-left: 10px;
+}
+.my-city{
+	margin-left: 10px;
+	color: #4747d1;
+}
+.new-image{
+	height: 120px;
+	min-height: 120px;
+}
+.product_amount{
+	text-align: center;
+	color: #ffd11a;
+}
+.individual_product_amount{
+	color: #ffd11a;
+	margin: 10px 0;
+	font-size: 20px;
+    font-weight: bold;
+}
+.navbar{
+	margin-bottom: 0px;
+	border-radius: 0px;
+}
+.bg-as{
+	background-color: #ffd11a;
+	height: 40px;
+	padding: 0;
+	width: 100%;
+}
+.customize-ins{
+	width: 95%;
+	float: right;
+	border: 1px solid transparent;
+    border-radius: 0px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0) inset;
+}
+.customize-ins:focus{
+	border: none;
+	outline: none;
+}
+.search-box{
+	font-size: 14px;
+	width: 5%;
+    height: 34px;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 0px;
+    padding: 8px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0) inset;
+    color: #555;
+}
+.modal-backdrop {
+   background-color: #fff;
+   opacity:0.9 !important;
+}
+.modal-content{
+	border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 0px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+}
+.close {
+    font-size: 30px;
+    font-weight: lighter;
+    opacity: 0.9;
+}
+.review_section{
+	height: 70px;
+}
+.more_details{
+	height: 70px;
+}
+.more_details h5{
+	border-bottom: 1px dashed;
+    margin-left: 25%;
+    cursor: pointer;
+    width: 50%;
+}
+.less_detail_link{
+	border-bottom: 1px dashed;
+    cursor: pointer;
+    float: left;
+    width: 14%;
+    display: none;
+}
+.more_detail_link{
+	display: block;
+}
+.add_to_cart{
+	width: 100%;
+	background-color: #4d79ff;
+	text-align: left;
+	color: #fff;
+	height: 40px;
+	border-radius: 0px;
+	margin: 10px 0;
+}
+.add_to_cart:hover{
+	color: #fff;
+}
+.more_detail_section{
+	display: none;
+	width: 100%;
+	float: left;
+}
+.related_products{
+	width: 100%;
+	float: left;
+}
+.related_products h4{
+	text-transform: uppercase;
+}
