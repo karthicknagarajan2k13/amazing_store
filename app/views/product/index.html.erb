@@ -7,8 +7,31 @@
       <span><i class="fa fa-shopping-cart"></i></span><span>MY CART</span>
     </div>
   </div>
+  <div class="cart_list">
+    <% if @cart.present? %>
+      <% total = 0 %>
+      <% @cart.each do |c| %>
+        <% total +=  get_product(c).try(:amount) %>
+        <div class="panel panel-default individual_cart">
+          <div class="panel-body">
+            <div class="col-md-3"><img src="<%="#{get_product(c).try(:image)}"%>" class="cart-image"></div>
+            <div class="col-md-3"><%= truncate(get_product(c).try(:name), :length => 10)%></div>
+            <div class="col-md-3 product_amount">$<%= get_product(c).try(:amount)%></div>
+            <div class="col-md-3"><%= link_to 'X',product_remove_to_cart_path(product_id: get_product(c).try(:id)), class: 'close'%></div>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p>Your cart is empty</p>
+    <% end%>
+  </div>
   <div class="bottom_div">
-    <span class="total_div">Total</span><span class='total_div_count'>$14.00</span>
+    <span class="total_div">Total</span>
+    <% if total.present? %>
+      <span class='total_div_count'>$<%= total %></span>
+    <% else%>
+      <span class='total_div_count'>$0</span>
+    <% end%>
     <button class="btn check_button">Checkout</button>
   </div>
 </div>

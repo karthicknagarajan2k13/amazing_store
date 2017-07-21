@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'product/index'
 
   root 'product#index'
+  get 'product/index'
+  get 'product/add_to_cart'
+  get 'product/remove_to_cart'
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
