@@ -1,0 +1,85 @@
+<% products.each do |p| %>
+<div class="col-md-3">
+  <div class="panel panel-default" data-toggle="modal" data-target="#myModal<%="#{p.try(:id)}"%>">
+    <div class="panel-body">
+      <img src="<%="#{p.try(:image)}"%>" class="img img-responsive new-image">
+      <h5 data-toggle="tooltip" title="<%="#{p.try(:name)}"%>"><%= truncate(p.try(:name), :length => 35)%></h5>
+      <h5 class="product_amount">$<%= p.try(:amount)%></h5>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal<%="#{p.try(:id)}"%>" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="review_section">
+          <h5 class="less_detail_link">Less details</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="col-md-6">
+          <img src="<%="#{p.try(:image)}"%>" class="img img-responsive">
+        </div>
+        <div class="col-md-6">
+          <p class="star"><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span></p>
+          <h4><%=p.try(:name)%></h4>
+          <p class="individual_product_amount">$<%= p.try(:amount)%></p>
+          <button class="btn add_to_cart">Add to cart</button>
+          <p><%=p.try(:descrption)%></p>
+        </div>
+        <div class="more_details">
+          <div class="col-md-4"></div>
+          <div class="col-md-4"><h5 class="more_detail_link">More details</h5></div>
+          <div class="col-md-4"></div>
+        </div>
+        <div class="more_detail_section">
+          <div>
+
+          </div>
+          <div class="related_products">
+            <h4>Related Products</h4>
+            <% @product.limit(3).each do |p| %>
+            <div class="col-md-4">
+              <div class="panel panel-default" data-toggle="modal" data-target="#myModal<%="#{p.try(:id)}"%>">
+                <div class="panel-body">
+                  <img src="<%="#{p.try(:image)}"%>" class="img img-responsive new-image">
+                  <h5 data-toggle="tooltip" title="<%="#{p.try(:name)}"%>"><%= truncate(p.try(:name), :length => 30)%></h5>
+                  <p class="product_amount">$<%= p.try(:amount)%></p>
+                </div>
+              </div>
+            </div>
+            <% end %>
+            <h4>Reviews</h4>
+            <div class="review">
+              <div class="left">
+                <div class="review_left">
+                  <div class="cicle_one">JP</div>
+                </div>
+                <div class="review_right">
+                  <p><b>Julia Peterson</b></p>
+                  <p>My skin has always been soft. But now it feels like a babies bottom. I love it and the smell is pleasent and not strong</p>
+                  <p class="star"><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span></p>
+                </div>
+              </div>
+              <div class="left">
+                <div class="review_left">
+                  <div class="cicle_two">JP</div>
+                </div>
+                <div class="review_right">
+                  <p><b>Victoria Lee</b></p>
+                  <p>Great, non irritating eye cream. Better tan dermatologist product costing 10x more! Absorbs easy and leaves area soft to the touch. Need very little so should last a long time. When I saw the bags vanish and an age spot fade, I immediately bought a spare!</p>
+                  <p class="star"><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<% end %>

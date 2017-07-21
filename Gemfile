@@ -36,6 +36,8 @@ gem 'devise'
 
 # Search
 gem 'filterrific'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 
 # Image
 # gem 'carrierwave'

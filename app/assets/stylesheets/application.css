@@ -337,6 +337,17 @@
 	color: #6a6a6c;
 	padding: 15px;
 }
+.filter_section select{
+	-webkit-appearance: none; 
+   -moz-appearance: none;
+   appearance: none; 
+   background: none repeat scroll 0 0 transparent;
+    border: medium none;
+     background-repeat: no-repeat;
+  background-size: 0.5em auto;
+  background-position: right 0.25em center;
+  padding-right: 1em;
+}
 .filter_section span{
 	color: #6666cc;
 	cursor: pointer;
