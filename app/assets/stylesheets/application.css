@@ -376,3 +376,7 @@
 	font-size: 20px;
     margin-top: 10px;
 }
+.empty_msg{
+	padding: 10px;
+    text-align: center;
+}
