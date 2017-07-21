@@ -27,7 +27,7 @@
           <p class="star"><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span></p>
           <h4><%=p.try(:name)%></h4>
           <p class="individual_product_amount">$<%= p.try(:amount)%></p>
-          <%= link_to 'Add to cart', product_add_to_cart_path(product_id: p.try(:id)), class: 'btn add_to_cart' %>
+          <%= link_to 'Add to cart', add_to_cart_path(product_id: p.try(:id)), class: 'btn add_to_cart' %>
           <p><%=p.try(:descrption)%></p>
         </div>
         <div class="more_details">
