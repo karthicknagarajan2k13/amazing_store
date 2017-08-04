@@ -12,7 +12,6 @@
 <!-- Modal -->
 <div id="myModal<%="#{p.try(:id)}"%>" class="modal fade" role="dialog">
   <div class="modal-dialog">
-
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-body">
@@ -36,9 +35,7 @@
           <div class="col-md-4"></div>
         </div>
         <div class="more_detail_section">
-          <div>
-
-          </div>
+          <div></div>
           <div class="related_products">
             <h4>Related Products</h4>
             <% @product.limit(3).each do |p| %>
@@ -79,7 +76,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>
 <% end %>

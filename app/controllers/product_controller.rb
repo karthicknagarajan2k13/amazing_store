@@ -1,7 +1,6 @@
 class ProductController < ApplicationController
   def index
-  	#@product = Product.all
-  	@cart = session[:cart].compact.uniq if session[:cart].present?
+  	@cart = session[:cart] if session[:cart].present?
   	@filterrific = initialize_filterrific(
       Product,
       params[:filterrific],
@@ -22,15 +21,13 @@ class ProductController < ApplicationController
   	session[:cart] = [] unless session[:cart]
   	if params[:product_id]
   		session[:cart] << params[:product_id]
-  		p session[:cart]
   		redirect_to root_path
   	end
   end
 
   def remove_to_cart
   	if params[:product_id]
-  		p session[:cart]
-  		p session[:cart].delete_at(session[:cart].index(params[:product_id]))
+  		session[:cart].delete_at(session[:cart].index(params[:product_id]))
   		redirect_to root_path
   	end
   end

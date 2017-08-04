@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'product#index'
+  
   get 'product/index'
   get 'remove_to_cart' => 'product#remove_to_cart'
   get 'add_to_cart' => 'product#add_to_cart'

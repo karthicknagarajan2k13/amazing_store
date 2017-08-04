@@ -18,6 +18,7 @@ $(document).ready(function(){
 	// tooltip
     $('[data-toggle="tooltip"]').tooltip();
 });
+
 $(document).on('keyup','.filterrific-periodically-observed', function(){
   var data = $(this).closest("form").submit();
 });

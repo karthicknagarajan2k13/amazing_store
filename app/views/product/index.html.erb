@@ -14,10 +14,10 @@
         <% total +=  get_product(c).try(:amount) %>
         <div class="panel panel-default individual_cart">
           <div class="panel-body">
-            <div class="col-md-3"><img src="<%="#{get_product(c).try(:image)}"%>" class="cart-image"></div>
-            <div class="col-md-3"><%= truncate(get_product(c).try(:name), :length => 10)%></div>
-            <div class="col-md-3 product_amount">$<%= get_product(c).try(:amount)%></div>
-            <div class="col-md-3"><%= link_to 'X',remove_to_cart_path(product_id: get_product(c).try(:id)), class: 'remove_cart close'%></div>
+            <div class="wd-20"><img src="<%="#{get_product(c).try(:image)}"%>" class="cart-image"></div>
+            <div class="wd-36 product_des"><%= truncate(get_product(c).try(:name), :length => 45)%></div>
+            <div class="wd-30 product_amount">$<%= get_product(c).try(:amount)%></div>
+            <div class="wd-14"><%= link_to 'X',remove_to_cart_path(product_id: get_product(c).try(:id)), class: 'remove_cart close'%></div>
           </div>
         </div>
       <% end %>
@@ -106,14 +106,13 @@
             <h4>Creams & gels</h4>
           </div>
           <div class="col-md-6">
-            <p>Showing 60 of 392</p>
+            <p class="product_entry"><%= page_entries_info @product %></p>
           </div>
         </div>
         <div class="filter_section col-md-12">
           <%= form_for_filterrific @filterrific, html: { id: 'filterrific-no-ajax-auto-submit' }, remote: true do |f| %>
           <div class="col-md-4">PRODUCT TYPE : <span><%= f.select(:with_product_type_id,@filterrific.select_options[:with_product_type_id],{ include_blank: '- Any -' }) %></span></div>
           <div class="col-md-4">SORT BY: <span><%= f.select(:sorted_by, @filterrific.select_options[:sorted_by]) %></span></div>
-          <!-- <div class="col-md-4"><%#= link_to('Reset filters',reset_filterrific_url) %></div> -->
           <% end %> 
         </div>
       </div>
@@ -123,6 +122,7 @@
     </div>
   </div>
 </div>
+<!-- js -->
 <script type="text/javascript">
   // more_detail show
   $('.more_detail_link').on('click',function(){
