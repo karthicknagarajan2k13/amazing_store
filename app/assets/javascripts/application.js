@@ -14,16 +14,16 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-$(document).ready(function(){
+document.addEventListener("turbolinks:load", function() {
 	// tooltip
     $('[data-toggle="tooltip"]').tooltip();
-});
+    
+	$(document).on('keyup','.filterrific-periodically-observed', function(){
+	  var data = $(this).closest("form").submit();
+	});
 
-$(document).on('keyup','.filterrific-periodically-observed', function(){
-  var data = $(this).closest("form").submit();
-});
-
-$(document).on('change','#filterrific_sorted_by, #filterrific_with_product_type_id', function(){
-  var data = $(this).closest("form").submit();
+	$(document).on('change','#filterrific_sorted_by, #filterrific_with_product_type_id', function(){
+	  var data = $(this).closest("form").submit();
+	});
 });
 
